@@ -11,7 +11,8 @@ RUN apt-get update && apt-get install -y \
     unzip \
     cabextract \
     && rm -rf /var/lib/apt/lists/* \
-    && mkdir -p /app/office && chown -R abc:abc /app/office
+    && mkdir -p /app/office && chown -R abc:abc /app/office \
+    && chown -R abc:abc /config
 
 # Switch back to abc user
 USER abc
