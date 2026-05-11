@@ -1256,6 +1256,21 @@ apps:
       security_opt:
         - "seccomp=unconfined"
         - "apparmor=unconfined"
+- id: "thunderbird"
+  name: "Thunderbird"
+  logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/thunderbird-logo.png"
+  url: "https://github.com/linuxserver/docker-thunderbird"
+  provider: "docker"
+  provider_config:
+    image: "lscr.io/linuxserver/thunderbird:latest"
+    port: 3000
+    nvidia_support: true
+    dri3_support: true
+    type: "app"
+    autostart: true
+    url_support: false
+    open_support: false
+    extensions: []
 - id: "ungoogled-chromium"
   name: "Ungoogled Chromium"
   logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ungoogled-chromium-logo.png"
@@ -1309,6 +1324,22 @@ apps:
   provider: "docker"
   provider_config:
     image: "lscr.io/linuxserver/vscodium:latest"
+    port: 3000
+    nvidia_support: true
+    dri3_support: true
+    type: "app"
+    autostart: true
+    url_support: false
+    open_support: true
+    extensions:
+      - *code_files
+- id: "intellij-idea"
+  name: "IntelliJ IDEA"
+  logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/intellij-idea-logo.png"
+  url: "https://github.com/linuxserver/docker-intellij-idea"
+  provider: "docker"
+  provider_config:
+    image: "lscr.io/linuxserver/intellij-idea:latest"
     port: 3000
     nvidia_support: true
     dri3_support: true
@@ -1723,6 +1754,124 @@ apps:
     url_support: false
     open_support: true
     extensions: []
+- id: "microsoft-word"
+  name: "Microsoft Word"
+  logo: "https://upload.wikimedia.org/wikipedia/commons/8/86/Microsoft_Office_Word_%282019-present%29.svg"
+  url: "https://www.microsoft.com/en-us/microsoft-365/word"
+  provider: "docker"
+  provider_config:
+    image: "ghcr.io/vinc3nz/microsoft-word:latest"
+    port: 3000
+    nvidia_support: true
+    dri3_support: true
+    type: "app"
+    autostart: true
+    url_support: false
+    open_support: true
+    extensions:
+      - doc
+      - docx
+      - dot
+      - dotx
+      - rtf
+      - txt
+      - *ms_office_files
+- id: "microsoft-excel"
+  name: "Microsoft Excel"
+  logo: "https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Office_Excel_%282019-present%29.svg"
+  url: "https://www.microsoft.com/en-us/microsoft-365/excel"
+  provider: "docker"
+  provider_config:
+    image: "ghcr.io/vinc3nz/microsoft-excel:latest"
+    port: 3000
+    nvidia_support: true
+    dri3_support: true
+    type: "app"
+    autostart: true
+    url_support: false
+    open_support: true
+    extensions:
+      - xls
+      - xlsx
+      - xlsm
+      - csv
+      - ods
+      - *ms_office_files
+- id: "microsoft-powerpoint"
+  name: "Microsoft PowerPoint"
+  logo: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Microsoft_Office_PowerPoint_%282019-present%29.svg"
+  url: "https://www.microsoft.com/en-us/microsoft-365/powerpoint"
+  provider: "docker"
+  provider_config:
+    image: "ghcr.io/vinc3nz/microsoft-powerpoint:latest"
+    port: 3000
+    nvidia_support: true
+    dri3_support: true
+    type: "app"
+    autostart: true
+    url_support: false
+    open_support: true
+    extensions:
+      - ppt
+      - pptx
+      - pps
+      - ppsx
+      - pot
+      - potx
+      - *ms_office_files
+- id: "microsoft-outlook"
+  name: "Microsoft Outlook"
+  logo: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Microsoft_Outlook_2019_%282019-present%29.svg"
+  url: "https://www.microsoft.com/en-us/microsoft-365/outlook"
+  provider: "docker"
+  provider_config:
+    image: "ghcr.io/vinc3nz/microsoft-outlook:latest"
+    port: 3000
+    nvidia_support: true
+    dri3_support: true
+    type: "app"
+    autostart: true
+    url_support: false
+    open_support: true
+    extensions:
+      - pst
+      - ost
+      - msg
+      - eml
+- id: "microsoft-onenote"
+  name: "Microsoft OneNote"
+  logo: "https://upload.wikimedia.org/wikipedia/commons/1/19/Microsoft_Office_OneNote_%282019-present%29.svg"
+  url: "https://www.microsoft.com/en-us/microsoft-365/onenote"
+  provider: "docker"
+  provider_config:
+    image: "ghcr.io/vinc3nz/microsoft-onenote:latest"
+    port: 3000
+    nvidia_support: true
+    dri3_support: true
+    type: "app"
+    autostart: true
+    url_support: false
+    open_support: true
+    extensions:
+      - one
+      - onetoc2
+- id: "microsoft-access"
+  name: "Microsoft Access"
+  logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Microsoft_Office_Access_%282019-present%29.svg"
+  url: "https://www.microsoft.com/en-us/microsoft-365/access"
+  provider: "docker"
+  provider_config:
+    image: "ghcr.io/vinc3nz/microsoft-access:latest"
+    port: 3000
+    nvidia_support: true
+    dri3_support: true
+    type: "app"
+    autostart: true
+    url_support: false
+    open_support: true
+    extensions:
+      - mdb
+      - accdb
 - id: "wireshark"
   name: "Wireshark"
   logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/wireshark-icon.png"
