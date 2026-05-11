@@ -55,9 +55,15 @@ RUN wine /app/office/setup.exe /configure /app/office/config.xml
 # Clean up installation files
 RUN rm -rf /app/office/odt.exe /app/office/setup.exe /app/office/config.xml
 
+# Switch to root for copying and chmod
+USER root
+
 # Copy Office activation script
 COPY activate-office.sh /app/office/activate-office.sh
 RUN chmod +x /app/office/activate-office.sh
+
+# Switch back to abc user
+USER abc
 
 # Expose port
 EXPOSE 3000
