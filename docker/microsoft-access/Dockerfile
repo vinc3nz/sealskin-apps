@@ -10,13 +10,14 @@ RUN apt-get update && apt-get install -y \
     wget \
     unzip \
     cabextract \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir -p /app/office && chown -R abc:abc /app/office
 
 # Switch back to abc user
 USER abc
 
 # Create directory for Office installation
-RUN mkdir -p /app/office
+# RUN mkdir -p /app/office
 
 # Download Office Deployment Tool
 RUN wget -O /app/office/odt.exe https://download.microsoft.com/download/2/7/A/27AF1BE6-DD20-4CB4-B154-EBAB8A7D4A7E/officedeploymenttool_17328-20162.exe
